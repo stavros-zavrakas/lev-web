@@ -10,6 +10,7 @@
     "test": "npm run test:unit && npm run test:acceptance",
     "test:unit": "NODE_ENV=test mocha ./test/unit",
     "test:acceptance": "npm run start:mockapi & NODE_ENV=acceptance npm start & npm run chimp && npm run stop:all",
+    "test:acceptance:local": "npm run start:mockapi & NODE_ENV=acceptance npm start & npm run chimp || true && npm run stop:all",
     "install:mockapi": "cd test/acceptance/mock && npm install --quiet",
     "start:mockapi": "cd test/acceptance/mock && npm start; echo",
     "stop:mockapi": "cd test/acceptance/mock && npm stop",
