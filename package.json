@@ -10,9 +10,9 @@
     "test": "npm run test:unit && npm run test:acceptance",
     "test:unit": "NODE_ENV=test mocha ./test/unit",
     "test:acceptance": "npm run start:mockapi & NODE_ENV=acceptance npm start & npm run chimp && npm run stop:all",
-    "install:mockapi": "cd api/mock && npm install --quiet",
-    "start:mockapi": "cd api/mock && npm start; echo",
-    "stop:mockapi": "cd api/mock && npm stop",
+    "install:mockapi": "cd test/acceptance/mock && npm install --quiet",
+    "start:mockapi": "cd test/acceptance/mock && npm start; echo",
+    "stop:mockapi": "cd test/acceptance/mock && npm stop",
     "stop:all": "npm stop && npm run stop:mockapi",
     "chimp": "NODE_ENV=acceptance chimp --mocha --path=./test/acceptance/ --browser=phantomjs",
     "chimp:dev": "NODE_ENV=acceptance chimp --mocha --path=./test/acceptance/ --watch --browser=firefox",
@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "body-parser": "^1.14.1",
-    "chimp": "^0.20.2",
     "express": "^4.13.3",
     "express-partial-templates": "^0.1.0",
     "express-session": "^1.12.1",
@@ -39,6 +38,7 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "chimp": "^0.20.2",
     "eslint": "^0.23.0",
     "eslint-plugin-filenames": "^0.1.1",
     "eslint-plugin-mocha": "^0.2.2",
