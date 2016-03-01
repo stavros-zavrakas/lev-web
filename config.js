@@ -17,9 +17,9 @@ module.exports = {
   api: {
     real: api,
     host: process.env.NODE_ENV === 'acceptance' ? 'localhost' : api.host,
-    port: process.env.NODE_ENV === 'acceptance' ? 8081 : api.port,
+    port: process.env.NODE_ENV === 'acceptance' ? 8081 : api.port
   },
   session: {
-    secret: process.env.SESSION_SECRET || 'secret',
+    secret: process.env.SESSION_SECRET || 'secret'
   }
 };

@@ -32,6 +32,14 @@ describe('Search Page @watch', function() {
 
   describe('submitting a query', function () {
 
+    describe('that doesn\'t have any search criteria', function() {
+      it.only('should return an error message stating that either a system number or surname is required for searching', function() {
+        browser.submitForm('form');
+        browser.getText('#error').should.equal('Please enter criteria to search on');
+
+      })
+    });
+
     describe('that returns no records', function () {
 
       beforeEach(function () {

@@ -4,7 +4,9 @@ var _ = require('underscore');
 var api = require('../api');
 
 var Model = module.exports = function Model(attr) {
-  this.attributes = _.pick(attr, _.identity);
+  this.attributes = _.pick(attr, _.identity); // strips out elements with no values
+  console.log("attr are: ", attr)
+  console.log("this.attributes is: ", this.attributes)
 };
 
 Model.prototype.read = function getRecords() {
